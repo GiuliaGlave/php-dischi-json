@@ -74,10 +74,12 @@
       </header>
       <main class="">
         <div class="container">
+          <!-- lista dischi -->
           <div class="row row-cols-3">
             <div
               class="col mt-5"
               v-for="record in recordList"
+              @click="showDetails(record)"
             >
               <div class="card text-center p-5">
                 <img
@@ -89,6 +91,33 @@
                   <h5 class="card-title">{{record.title}}</h5>
                   <p class="card-text">{{record.author}}</p>
                   <p class="card-title">{{record.year}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- scheda singola dettaglio disco -->
+          <div
+            v-if="showTab"
+            class="detail-container"
+          >
+            <div class="record single-record">
+              <img
+                :src="tabContent.poster"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">{{tabContent.title}}</h5>
+                <p class="card-text">{{tabContent.author}}</p>
+                <p class="card-title">{{tabContent.year}}</p>
+                <div class="close-btn-container">
+                  <!-- chiudi dettaglio -->
+                  <button
+                    class="button close-button"
+                    @click="showTab = false"
+                  >
+                    X
+                  </button>
                 </div>
               </div>
             </div>

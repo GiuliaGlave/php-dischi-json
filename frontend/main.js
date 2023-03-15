@@ -3,6 +3,8 @@ const app = Vue.createApp({
     return {
       apiUrl: "/boolean_php/php-dischi-json/API/get_records.php",
       recordList: [],
+      tabContent: {},
+      showTab: false,
     };
   },
   methods: {
@@ -10,6 +12,11 @@ const app = Vue.createApp({
       axios.get(apiUrl).then((response) => {
         this.recordList = response.data;
       });
+    },
+
+    showDetails(record) {
+      this.showTab = true;
+      this.tabContent = record;
     },
   },
 
