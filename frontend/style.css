@@ -1,0 +1,55 @@
+:root {
+  --dark-bg: #06131f;
+  --light-bg: #1d2d3c;
+  --card-bg: #112030;
+  --detail-bg: rgba(17, 32, 48, 0.9);
+}
+header {
+  background-color: var(--dark-bg);
+  height: 5rem;
+}
+
+main {
+  background-color: var(--light-bg);
+}
+
+.record {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  color: white;
+
+  gap: 2rem;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.detail-container {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--detail-bg);
+  z-index: 1;
+  margin: auto;
+}
+
+.single-record {
+  position: absolute;
+  padding: 3rem;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  gap: 2rem;
+}
+
+#img-detail {
+  width: 25rem;
+}
